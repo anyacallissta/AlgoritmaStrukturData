@@ -29,20 +29,23 @@ public class Buku05 {
         harga = hrg;
     }
 
-    void hitungHargaTotal(int jml) {
+    int hitungHargaTotal(int jml) {
         total = harga * jml;
+        return total;
     }
 
-    void hitungDiskon() {
+    int hitungDiskon() {
         if (total > 150000) {
             diskon += total * 0.12;
         } else if (total >= 75000 || total <= 150000) {
             diskon  += total * 0.05;
         }
+        return diskon;
     }
 
-    void hitungHargaBayar () {
+    int hitungHargaBayar () {
         bayar = total - diskon;
+        return bayar;
     }
 
     public Buku05() {
