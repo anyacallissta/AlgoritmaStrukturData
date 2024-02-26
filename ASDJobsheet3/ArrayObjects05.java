@@ -1,6 +1,9 @@
+import java.util.Scanner;
+
 public class ArrayObjects05 {
     
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         PersegiPanjang05[] ppArray = new PersegiPanjang05[3];
 
         ppArray[0] = new PersegiPanjang05();
@@ -16,8 +19,8 @@ public class ArrayObjects05 {
         ppArray[2].lebar = 20;
 
         System.out.println("Persegi panjang ke-0, panjang: " + ppArray[0].panjang + ", lebar: " + ppArray[0].lebar);
-        System.out.println("Persegi panjang ke-0, panjang: " + ppArray[1].panjang + ", lebar: " + ppArray[1].lebar);
-        System.out.println("Persegi panjang ke-0, panjang: " + ppArray[2].panjang + ", lebar: " + ppArray[2].lebar);
+        System.out.println("Persegi panjang ke-1, panjang: " + ppArray[1].panjang + ", lebar: " + ppArray[1].lebar);
+        System.out.println("Persegi panjang ke-2, panjang: " + ppArray[2].panjang + ", lebar: " + ppArray[2].lebar);
     }
     
 }
