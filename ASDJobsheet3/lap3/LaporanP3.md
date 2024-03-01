@@ -41,7 +41,7 @@ _Gambar 2. Output ArrayObject05.java_
         PersegiPanjang[][] ppArray = new PersegiPanjang[1][2];
         ppArray[0][1] = new PersegiPanjang(20, 10);
         ppArray[0][1] = new PersegiPanjang(40. 60);
-    ```
+        ```
 3. Jika diketahui terdapat class Persegi yang memiliki atribut sisi bertipe integer, maka kode dibawah ini akan memunculkan error saat dijalankan. Mengapa?
     ```java
     Persegi[] pgArray = new Persegi[100];
