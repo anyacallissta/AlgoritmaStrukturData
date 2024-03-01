@@ -38,7 +38,7 @@ public class Mahasiswa05 {
     public static class MahasiswaMain05 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Masukkan jumlah Mahasiswa: ");
+        System.out.print("Masukkan jumlah Mahasiswa: ");
         int j = sc.nextInt();
         DataMahasiswa05[] dataMhs = new DataMahasiswa05[j];
         
