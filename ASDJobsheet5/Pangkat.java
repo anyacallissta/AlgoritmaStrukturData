@@ -28,6 +28,15 @@ public class Pangkat {
         }
     }
 
+    public Pangkat() {
+
+    }
+
+    public Pangkat(int n, int p) {
+        nilai = n;
+        pangkat = p;
+    } 
+
     public static class mainPangkat {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
@@ -40,21 +49,35 @@ public class Pangkat {
                 png[i] = new Pangkat();
                 System.out.print("Masukkan nilai yang hendak dipangkatkan: ");
                 int nilai = sc.nextInt();
-                png[i].nilai = nilai;
                 System.out.print("Masukkan nilai pemangkat: ");
                 int pangkat = sc.nextInt();
-                png[i].pangkat = pangkat;
+                png[i] = new Pangkat(nilai, pangkat);
             }
 
-            System.out.println("HASIL PANGKAT - BRUTE FORCE");
-            for ( int i = 0; i < elemen; i++) {
-                System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah " + png[i].pangkatBF(png[i].nilai, png[i].pangkat));
+            System.out.println("Operasi Perhitungan");
+            System.out.println("1. Brute Force");
+            System.out.println("2. Divide Conquer");
+            System.out.print("Pilih (1/2): ");
+            int opsi = sc.nextInt();
+            switch (opsi) {
+                case 1:
+                    System.out.println("HASIL PANGKAT - BRUTE FORCE");
+                    for ( int i = 0; i < elemen; i++) {
+                        System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah " + png[i].pangkatBF(png[i].nilai, png[i].pangkat));
+                    }
+                    break;
+            
+                case 2:
+                    System.out.println("HASIL PANGKAT - DIVIDE AND CONQUER");
+                    for ( int i = 0; i < elemen; i++) {
+                        System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah " + png[i].pangkatDC(png[i].nilai, png[i].pangkat));
+                    }
+                    break;
+
+                default:
+                    break;
             }
 
-            System.out.println("HASIL PANGKAT - DIVIDE AND CONQUER");
-            for ( int i = 0; i < elemen; i++) {
-                System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah " + png[i].pangkatDC(png[i].nilai, png[i].pangkat));
-            }
         }
     }
 }
