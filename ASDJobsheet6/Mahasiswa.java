@@ -76,6 +76,18 @@ package ASDJobsheet6;
                     listMhs[j] = temp;
                 }
             }
+
+            void insertionSortDesc() {
+                for (int i =1; i < listMhs.length; i++) {
+                    Mahasiswa temp = listMhs[i];
+                    int j = i;
+                    while (j > 0 && listMhs[j-1].ipk < temp.ipk) {
+                        listMhs[j] = listMhs[j-1];
+                        j--;
+                    }
+                    listMhs[j] = temp;
+                }
+            }
             
         }
 
@@ -107,6 +119,10 @@ package ASDJobsheet6;
 
                 System.out.println("Data Mahasiswa setelah sorting ascending berdasarkan IPK : ");
                 list.insertionSort();;
+                list.tampil();
+
+                System.out.println("Data Mahasiswa setelah sorting descendingg berdasarkan IPK : ");
+                list.insertionSortDesc();
                 list.tampil();
             }
         }
