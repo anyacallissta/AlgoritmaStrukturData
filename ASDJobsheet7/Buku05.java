@@ -56,6 +56,15 @@ public class Buku05 {
             return posisi;
         }
 
+        public Buku05 FindBuku(int cari) {
+            for (int j = 0; j < listBk.length; j++) {
+                if (listBk[j].kodeBuku == cari) {
+                    return listBk[j];
+                }
+            }
+            return null;
+        }
+
         public void TampilPosisi(int x, int pos) {
             if (pos != -1) {
                 System.out.println("Data : " + x + " ditemukan pada indeks " + pos);
@@ -116,6 +125,9 @@ public class Buku05 {
                 int posisi = data.FindSeqSearch(cari);
                 data.TampilPosisi(cari, posisi);
                 data.TampilData(cari, posisi);
+
+                // Buku05 dataBuku = data.FindBuku(cari);
+                // dataBuku.tampilDataBuku();;
             }
         }
         
