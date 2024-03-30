@@ -5,13 +5,13 @@
     <br> <p style="font-family: calibri;"> Anya Callissta Chriswantari <br>TI IH/05 <br>2341720234 </p>
 </div>
 
-## 5.2 Percobaan 1
+## 6.2 Percobaan 1
 ![Percobaan 1](dataawal_p6.png)
 ![Percobaan 1](desc_p6.png)
 
 _Gambar 1. Output Mahasiswa.java_
 
-### 5.2.3 Pertanyaan Percobaan 1
+### 6.2.3 Pertanyaan Percobaan 1
 1. Terdapat di method apakah proses bubble sort?
     * Terdapat di method bubbleSort()
     ``` java
@@ -54,13 +54,13 @@ c. Mengapa syarat dari perulangan j adalah j<listMhs.length-i ?
 d. Jika banyak data di dalam listMhs adalah 50, maka berapakali perulangan i akan berlangsung? Dan ada berapa Tahap bubble sort yang ditempuh?
 * Perulangan i dan tahap bubble sort akan berlangsung sebanyak 49 kali
 
-## 5.3 Percobaan 2
+## 6.3 Percobaan 2
 ![Percobaan 2](dataawal_p6.png)
 ![Percobaan 2](asc_p6.png)
 
 _Gambar 2. Output Mahasiswa.java_
 
-### 5.3.3 Pertanyaan Percobaan 2
+### 6.3.3 Pertanyaan Percobaan 2
 Di dalam method selection sort, terdapat baris program seperti di bawah ini:
 ``` java
 int idxMin = i;
@@ -73,13 +73,13 @@ for (int j = i+1; j < listMhs.length; j++) {
 Untuk apakah proses tersebut, jelaskan!
     * Variabel idxMin diinisialisasikan dengan nilai i untuk mengasumsikan bahwa elemen pada indeks i adalah elemen dengan nilai terkecil. Kemudian mulai iterasi dari j = i+1 hingga akhir array (listMhs.length), pada setiap iterasi memeriksa apakah nilai ipk dari elemen pada indeks j lebih kecil dari nilai ipk dari elemen pada indeks idxMin. Jika ya, maka nilai idxMin menjadi j. Proses tersebut akan mengurutkan seluruh data mahasiswa dari nilai terkecil ke terbesar
 
-## 5.4 Percobaan 3
+## 6.4 Percobaan 3
 ![Percobaan 3](dataawal_p6.png)
 ![Percobaan 3](asc_p6.png)
 
 _Gambar 3. Output Mahasiswa.java_
 
-### 5.4.3 Pertanyaan Percobaan 3
+### 6.4.3 Pertanyaan Percobaan 3
 Ubahlah fungsi pada InsertionSort sehingga fungsi ini dapat melaksanakan proses sorting dengan cara descending.
 
 ![Percobaan 3](insertionDesc_P6.png)
