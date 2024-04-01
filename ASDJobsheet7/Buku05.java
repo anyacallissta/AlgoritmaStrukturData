@@ -65,6 +65,21 @@ public class Buku05 {
             return null;
         }
 
+        public int FIndBinarySearch(int cari, int left, int right) {
+            int mid;
+            if (right >= left) {
+                mid = left + (right - left) / 2;
+                if (cari == listBk[mid].kodeBuku) {
+                    return (mid);
+                } else if (listBk[mid].kodeBuku > cari) {
+                    return FIndBinarySearch(cari, left, mid - 1);
+                } else {
+                    return FIndBinarySearch(cari, mid + 1, right);
+                }
+            }
+            return -1;
+        }
+
         public void TampilPosisi(int x, int pos) {
             if (pos != -1) {
                 System.out.println("Data : " + x + " ditemukan pada indeks " + pos);
@@ -126,8 +141,14 @@ public class Buku05 {
                 data.TampilPosisi(cari, posisi);
                 data.TampilData(cari, posisi);
 
-                // Buku05 dataBuku = data.FindBuku(cari);
-                // dataBuku.tampilDataBuku();;
+                Buku05 dataBuku = data.FindBuku(cari);
+                dataBuku.tampilDataBuku();
+
+                System.out.println("=========================================================");
+                System.out.println("Menggunakan binary search");
+                posisi = data.FIndBinarySearch(cari, 0, jumBuku - 1);
+                data.TampilPosisi(cari, posisi);
+                data.TampilData(cari, posisi);
             }
         }
         
