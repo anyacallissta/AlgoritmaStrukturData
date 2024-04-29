@@ -15,7 +15,9 @@ public class Utama05 {
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
             System.out.println("4. Lihat barang teratas");
-            System.out.println("5. Keluar");
+            System.out.println("5. Lihat barang terbawah");
+            System.out.println("6. Cari barang");
+            System.out.println("7. Keluar");
             System.out.print("Pilih operasi: ");
             int pilihan = scanner.nextInt();
             scanner.nextLine();
@@ -46,6 +48,27 @@ public class Utama05 {
                     break;
 
                 case 5:
+                    gudang.lihatBarangTerbawah();
+                    break;                    
+
+                case 6:
+                    System.out.println("1. Kode barang");
+                    System.out.println("2. Nama barang");
+                    System.out.print("Cari barang berdasarkan (1/2): ");
+                    int choose = scanner.nextInt();
+                    scanner.nextLine();
+                    if (choose == 1) {
+                        System.out.print("Masukkan kode barang yang dicari: ");
+                        int cariKode = scanner.nextInt();
+                        gudang.cariKodeBarang(cariKode);
+                    } else if (choose == 2) {
+                        System.out.print("Masukkan nama barang yang dicari: ");
+                        String cariNama = scanner.nextLine();
+                        gudang.cariNamaBarang(cariNama);
+                    }
+                    break;
+
+                case 7:
                     break;
 
                 default:

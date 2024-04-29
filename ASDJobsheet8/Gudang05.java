@@ -41,7 +41,7 @@ public class Gudang05 {
             Barang05 delete = tumpukan[top];
             top--;
             System.out.println("Barang " + delete.nama + " diambil dari Gudang");
-            System.out.println("Kode unik dalam biner: " + konveriDesimalKeBiner(delete.kode));
+            System.out.println("Kode unik dalam biner: " + konversiDesimalKeBiner(delete.kode));
             return delete;
         } else {
             System.out.println("Tumpukan barang kosong");
@@ -60,6 +60,58 @@ public class Gudang05 {
         }
     }
 
+    public Barang05 lihatBarangTerbawah() {
+        if (!cekKosong()) {
+            Barang05 barangTerbawah = tumpukan[0];
+            System.out.println("Barang terbawah: " + barangTerbawah.nama);
+            return barangTerbawah;
+        } else {
+            System.out.println("Tumpukan barang kosong");
+            return null;
+        }
+    }
+
+    public void cariKodeBarang(int cariKode) {
+        if (!cekKosong()) {
+            boolean found = false;
+            for (int j = 0; j < top + 1; j++) {
+                if (tumpukan[j].kode == cariKode) {
+                    found = true;
+                    System.out.println("Barang dengan kode " + cariKode + " ditemukan");
+                    System.out.printf("Kode %d: %s (Kategori %s)\n", tumpukan[j].kode, tumpukan[j].nama, tumpukan[j].kategori);
+                    break;
+                }
+            } 
+            
+            if (!found) {
+                System.out.println("Barang dengan kode " + cariKode + " tidak ditemukan");
+            }
+
+        } else {
+            System.out.println("Tumpukan kosong");
+        }
+    }
+
+    public void cariNamaBarang(String cariNama) {
+        if (!cekKosong()) {
+            boolean found = false;
+            for (int j = 0; j < top + 1; j++) { 
+                if (tumpukan[j].nama.equalsIgnoreCase(cariNama)) {
+                    found = true;
+                    System.out.println("Barang dengan nama " + cariNama + " ditemukan");
+                    System.out.printf("Kode %d: %s (Kategori %s)\n", tumpukan[j].kode, tumpukan[j].nama, tumpukan[j].kategori);
+                    break;
+                }
+            }
+            
+            if (!found) {
+                System.out.println("Barang dengan nama " + cariNama + " tidak ditemukan");
+            }
+        } else {
+            System.out.println("Tumpukan kosong");
+        }
+    }
+
     public void tampilkanBarang() {
         if (!cekKosong()) {
             System.out.println("Rincian tumpukan barang di Gudang: ");
@@ -71,9 +123,9 @@ public class Gudang05 {
         }
     }
 
-    public String konveriDesimalKeBiner(int kode) {
+    public String konversiDesimalKeBiner(int kode) {
         StackKonversi05 stack = new StackKonversi05();
-        while (kode > 0) {
+        while (kode != 0) {
             int sisa = kode % 2;
             stack.push(sisa);
             kode = kode / 2;
