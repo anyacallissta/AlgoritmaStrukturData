@@ -142,4 +142,34 @@ public class DoubleLinkedList {
             size--;
         }
     }
+
+    public int getFirst() throws IndexOutOfBoundsException {
+        if (isEmpty()) {
+            throw new IndexOutOfBoundsException("Linked List kosong");
+        }
+        return head.data;
+    }
+
+    public int getLast() throws IndexOutOfBoundsException {
+        if (isEmpty()) {
+            throw new IndexOutOfBoundsException("Linked List kosong");
+        }
+        Node tmp = head;
+        while (tmp.next != null) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
+
+    public int get(int index) throws IndexOutOfBoundsException {
+        if (isEmpty() || index >= size) {
+            throw new IndexOutOfBoundsException("Nilai indeks di luar batas");
+        }
+        Node tmp = head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
+
 }
