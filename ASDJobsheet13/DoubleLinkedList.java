@@ -1,7 +1,5 @@
 package ASDJobsheet13;
 
-import java.lang.reflect.InaccessibleObjectException;
-
 public class DoubleLinkedList {
     Node head;
     int size;
@@ -103,7 +101,7 @@ public class DoubleLinkedList {
 
     public void removeLast() throws IndexOutOfBoundsException {
         if (isEmpty()) {
-            throw new InaccessibleObjectException("Linked List masih kosong, tidak dapat dihapus!");
+            throw new IndexOutOfBoundsException("Linked List masih kosong, tidak dapat dihapus!");
         } else if (head.next == null) {
             head = null;
             size--;
@@ -119,7 +117,7 @@ public class DoubleLinkedList {
 
     public void remove(int index) throws IndexOutOfBoundsException {
         if (isEmpty() || index >= size) {
-            throw new InaccessibleObjectException("Nilai indeks di luar batas");
+            throw new IndexOutOfBoundsException("Nilai indeks di luar batas");
         } else if (index == 0) {
             removeFirst();
         } else {
