@@ -9,7 +9,7 @@ public class Vaksinasi {
     
         Node(Node prev, int antrian, String nama, Node next) {
             this.prev = prev;
-            this.antrian = antrian;
+            this.antrian = antrian; 
             this.nama = nama;
             this.next = next;
         }
