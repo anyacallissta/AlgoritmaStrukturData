@@ -1,0 +1,7 @@
+![kuis2](kuis2.png) 
+![kuis2](kuis2(2).png) 
+![kuis2](kuis2(3).png) 
+![kuis2](kuis2(4).png) 
+![kuis2](kuis2(5).png) 
+![kuis2](kuis2(6).png) 
+![kuis2](kuis2(7).png)
