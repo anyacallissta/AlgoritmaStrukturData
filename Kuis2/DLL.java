@@ -1,6 +1,4 @@
 package Kuis2;
-import java.sql.Driver;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class DLL {
@@ -61,6 +59,7 @@ public class DLL {
         while (current != null) {
             if (current.dataDriver.nameDriver().equals(name)) {
                 current.dataDriver.addPoint(points);
+                sortDescending();
                 return;
             }
             current = current.next;
@@ -69,19 +68,19 @@ public class DLL {
 
     public static void insertResult(Scanner scanner, DLL standing, DriverF1[] drivers, KlasemenF1[] resultF1, int noGP) {
         String nameGP = GrandPrix(noGP);
-        int[] racePositions = new int[drivers.length];
+        int[] driverPos = new int[drivers.length];
 
         for (int i = 0; i < drivers.length; i++) {
             System.out.print("| Masukkan Posisi " + drivers[i].nameDriver() + ": ");
             int position = scanner.nextInt();
             if (position >= 1 && position <= drivers.length) {
-                racePositions[position - 1] = i; 
+                driverPos[position - 1] = i; 
                 } else {
                 System.out.println("Posisi tidak valid. Harus antara 1 dan " + drivers.length);
                 i--; 
             }
 
-            resultF1[noGP - 1] = new KlasemenF1 (nameGP, racePositions);
+            resultF1[noGP - 1] = new KlasemenF1 (nameGP, driverPos);
             pointF1(standing, drivers, resultF1[noGP - 1]);
         }
     }
@@ -89,9 +88,9 @@ public class DLL {
     public void printStanding() {
         NodeF1 current = head;
         int i = 1;
-        System.out.println("============================================");
-        System.out.println("            HASIL STANDING F1 2023          ");
-        System.out.println("============================================");
+        System.out.println("==============================================");
+        System.out.println("             HASIL STANDING F1 2023           ");
+        System.out.println("==============================================");
         System.out.printf(" %-7s | %-25s | %-5s \n", "Pos", "Nama", "Poin");
         while (current != null) {
             System.out.printf(" %-7d | %-25s | %-5d \n", i, current.dataDriver.nameDriver(), current.dataDriver.pointDriver());
@@ -126,7 +125,7 @@ public class DLL {
             case 5:
                 return "Miami Grand Prix";
             case 6:
-                return "Pertandingan di Emilia Romagna dibatalkan";
+                return "Emilia Romagna Grand Prix \n\tPertandingan dibatalkan";
             case 7:
                 return "Monaco Grand Prix";
             case 8:
