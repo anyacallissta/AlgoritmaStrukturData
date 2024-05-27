@@ -188,4 +188,29 @@ public class BinaryTree05 {
         
         return current;
     }
+
+    int findMinValue(Node05 node) {
+        if (node.left == null) {
+            return node.data;
+        } else {
+            return findMinValue(node.left);
+        }
+    }
+
+    int findMaxValue(Node05 node) {
+        if (node.right == null) {
+            return node.data;
+        } else {
+            return findMaxValue(node.right);
+        }
+    }
+
+    void printMinMaxValues() {
+        if (!isEmpty()) {
+            System.out.println("Tree is empty!");
+        } else {
+            System.out.println("\nSmallest Value          : " + findMinValue(root));
+            System.out.println("Largest Value           : " + findMaxValue(root));
+        }
+    }
 }

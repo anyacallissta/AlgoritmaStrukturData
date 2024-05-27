@@ -32,6 +32,7 @@ public class BinaryTreeMain05 {
         System.out.print("Post Order Traversal    :");
         bt.traversePostOrder(bt.root);
         System.out.println("");
+        bt.printMinMaxValues();
         System.out.println("\nFind Node               : " + bt.find(5));
         System.out.println("Delete Node 8");
         bt.delete(8);
