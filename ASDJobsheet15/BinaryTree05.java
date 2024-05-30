@@ -8,11 +8,11 @@ public class BinaryTree05 {
     }
 
     boolean isEmpty() {
-        return root != null;
+        return root == null;
     }
 
     void add(int data) {
-        if (!isEmpty()) { //tree is empty
+        if (isEmpty()) { //tree is empty
             root = new Node05(data);
         } else {
             Node05 current = root;
@@ -98,7 +98,7 @@ public class BinaryTree05 {
     }
 
     void delete(int data) {
-        if (!isEmpty()) {
+        if (isEmpty()) {
             System.out.println("Tree is empty!");
             return;
         }
@@ -206,7 +206,7 @@ public class BinaryTree05 {
     }
 
     void printMinMaxValues() {
-        if (!isEmpty()) {
+        if (isEmpty()) {
             System.out.println("Tree is empty!");
         } else {
             System.out.println("\nSmallest Value          : " + findMinValue(root));
