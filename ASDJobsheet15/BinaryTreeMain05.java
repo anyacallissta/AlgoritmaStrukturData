@@ -33,6 +33,9 @@ public class BinaryTreeMain05 {
         bt.traversePostOrder(bt.root);
         System.out.println("");
         bt.printMinMaxValues();
+        System.out.print("Leaf Data               : ");
+        int totalLeaves = bt.leafValues(bt.root);
+        System.out.println("\nNumber of Leaf Nodes    : " + totalLeaves);
         System.out.println("\nFind Node               : " + bt.find(5));
         System.out.println("Delete Node 8");
         bt.delete(8);

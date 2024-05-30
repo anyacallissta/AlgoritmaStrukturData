@@ -213,4 +213,18 @@ public class BinaryTree05 {
             System.out.println("Largest Value           : " + findMaxValue(root));
         }
     }
+
+    int leafValues(Node05 node) {
+        if (node == null) {
+            return 0;
+        }
+        if (node.left == null && node.right == null) {
+            System.out.print(node.data + " ");
+            return 1;
+        }
+        int leftLeaves = leafValues(node.left);
+        int rightLeaves = leafValues(node.right);
+        return leftLeaves + rightLeaves;
+    }    
+
 }
