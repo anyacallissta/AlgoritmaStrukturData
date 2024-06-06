@@ -67,4 +67,23 @@ public class Graph05 {
         }
         System.out.println("");
     }
+
+    public void checkEdge(int asal, int tujuan) throws Exception {
+        boolean found = false;
+        int size = list[asal].size();
+    
+        for (int i = 0; i < size; i++) {
+            if (list[asal].get(i) == tujuan) {
+                found = true;
+                break;
+            }
+        }
+    
+        if (found) {
+            System.out.println("Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " bertetangga");
+        } else {
+            System.out.println("Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " tidak bertetangga");
+        }
+    }
+    
 }
