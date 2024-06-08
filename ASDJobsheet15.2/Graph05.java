@@ -86,4 +86,37 @@ public class Graph05 {
         }
     }
     
+    public void updateJarak(int asal, int tujuan, int jarak) {
+        boolean success = false;
+        Node05 current = list[asal].head;
+        while (current != null) {
+            if (current.data == tujuan) {
+                current.jarak = jarak;
+                success = true;
+                break;
+            }
+            current = current.next;
+        }
+
+        if (success) {
+            System.out.println("Jarak antar gedung berhasil diperbarui");
+        } else {
+            System.out.println("Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " belum terhubung");
+        }
+    }
+
+    public void hitungEdge() {
+        int totalEdge = 0;
+
+        for (int i = 0; i < vertex; i++) { // directed
+            totalEdge += list[i].size();
+        }
+
+        // for (int i = 0; i < vertex; i++) { // undirected
+        //     totalEdge += list[i].size();
+        // }
+        // totalEdge /= 2;
+
+        System.out.println("Jumlah edge: " + totalEdge);
+    }
 }

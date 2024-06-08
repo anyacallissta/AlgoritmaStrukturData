@@ -48,7 +48,9 @@ public class GraphMain05 {
             System.out.println("| 3. Degree                               |");
             System.out.println("| 4. Print Graph                          |");
             System.out.println("| 5. Check Edge                           |");
-            System.out.println("| 6. Exit                                 |");
+            System.out.println("| 6. Update Distance                      |");
+            System.out.println("| 7. Counting Edge                        |");
+            System.out.println("| 8. Exit                                 |");
             System.out.println("===========================================");
             System.out.print("Pilih Menu (1/2/3/4/5/6): ");
             choose = sc.nextInt();
@@ -104,9 +106,29 @@ public class GraphMain05 {
                     gedung.checkEdge(asal, tujuan);
                     break;
 
+                case 6:
+                    System.out.println("\n===========================================");
+                    System.out.println("|        MENGUBAH JARAK ANTAR GEDUNG      |");
+                    System.out.println("===========================================");
+                    System.out.print("Masukkan posisi gedung asal   : ");
+                    asal = sc.nextInt();
+                    System.out.print("Masukkan posisi gedung tujuan : ");
+                    tujuan = sc.nextInt();
+                    System.out.print("Masukkan jarak antara gedung  : ");
+                    jarak = sc.nextInt();
+                    gedung.updateJarak(asal, tujuan, jarak);
+                    break;
+
+                case 7:
+                    System.out.println("\n===========================================");
+                    System.out.println("|           MENGHITUNG JUMLAH EDGE        |");
+                    System.out.println("===========================================");
+                    gedung.hitungEdge();
+                    break;
+
                 default:
                     break;
             }
-        } while (choose != 6);
+        } while (choose != 8);
     }
 }
