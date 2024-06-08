@@ -26,4 +26,30 @@ public class GraphMatriks05 {
             System.out.println();
         }
     }
+
+    public void degree() {
+        System.out.println("-----------------------------------");
+        System.out.println("| Gedung |  OutDegree |  InDegree |");
+        System.out.println("-----------------------------------");
+        for (int i = 0; i < vertex; i++) {
+            int outDegree = 0;
+            int inDegree = 0;
+            
+            // Calculate outDegree
+            for (int j = 0; j < vertex; j++) {
+                if (matriks[i][j] != 0) {
+                    outDegree++;
+                }
+            }
+            // Calculate inDegree
+            for (int j = 0; j < vertex; j++) {
+                if (matriks[j][i] != 0) {
+                    inDegree++;
+                }
+            }
+
+            System.out.printf("|   %c    |    %3d     |    %3d    |\n", (char) ('A' + i), outDegree, inDegree);
+        }
+        System.out.println("-----------------------------------\n");
+    }
 }
